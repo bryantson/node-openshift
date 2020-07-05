@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "start": "npx nodemon --exec npmx babel-node app.js",
+    "start": "npx nodemon --exec npx babel-node app.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
