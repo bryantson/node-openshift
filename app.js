@@ -43,8 +43,8 @@ app.get("/", function(req, res, next) {
     res.send("Hello, world");
 });
 
-app.get("/pets", function(req, res, next) {
-     res.locals.connection.query("SELECT * FROM pets", function(error, result, fields) {
+app.get("/pet", function(req, res, next) {
+     res.locals.connection.query("SELECT * FROM pet", function(error, result, fields) {
      if(error) res.send("ERROR: " + error);
      
      res.send(JSON.stringify(result));
