@@ -50,6 +50,4 @@ app.get("/", function(req, res, next) {
     console.log("HELLO, MYSQL");
 });
 
-var http = require("http");
-var server = http.createServer(app);
-server.listen(3000);
+server.listen(8080);
