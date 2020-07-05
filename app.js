@@ -13,6 +13,8 @@ const MYSQL_DATABASE = process.env.MYSQL_DATABASE;
 
 var app = express();
 
+app.use(express.static(__dirname + "/public"));
+
 app.use(function(req, res, next) {
   res.locals.connection = mysql.createConnection({
     host: MYSQL_SERVICE_HOST,
