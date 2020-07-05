@@ -1,8 +1,19 @@
-import React from 'react';
+import React, {useEffect}  from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  useEffect(() => {
+    const fetchData = async() => {
+	const result = await fetch('/pet');
+	const body = await result.json();
+
+	console.log("BODY: " +  JSON.stringify(body));
+    }
+    fetchData();
+  });
+
   return (
     <div className="App">
       <header className="App-header">
