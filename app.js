@@ -45,7 +45,7 @@ app.get("/", function(req, res, next) {
 
 app.get("/pets", function(req, res, next) {
      res.locals.connection.query("SELECT * FROM pets", function(error, result, fields) {
-     if(error) throw error;
+     if(error) res.send("ERROR: " + error);
      
      res.send(JSON.stringify(result));
     });
