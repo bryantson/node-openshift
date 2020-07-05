@@ -18,6 +18,7 @@ function App() {
   });
 
   return (
+    <React.Fragment>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -48,7 +49,8 @@ function App() {
 	))}
         </table>
       </div>
-    </div>
+    </div> 
+    </React.Fragment>
   );
 }
 
