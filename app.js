@@ -1,9 +1,9 @@
-var express = require("express");
-var path = require("path");
+import express from "express";
+import path from "path";
 
 var router = express.Router();
 
-var mysql = require("mysql");
+import mysql from "mysql";
 
 const MYSQL_SERVICE_HOST = process.env.MYSQL_SERVICE_HOST;
 const MYSQL_SERVICE_PORT = process.env.MYSQL_SERVICE_PORT;
