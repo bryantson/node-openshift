@@ -40,15 +40,15 @@ con.connect(function(err) {
 */
 
 app.get("/", function(req, res, next) {
-    /*
-    res.locals.connection.query("SELECT * FROM pets", function(error, result, fields) {
-     console.log("ERROR: " + error); 
-     if(error) throw error;
-      res.send(JSON.stringify(result));
-    });
-    */
-    console.log("HELLO, MYSQL");
     res.send("Hello, world");
 });
+
+app.get("/pets", function(req, res, next) {
+     res.locals.connection.query("SELECT * FROM pets", function(error, result, fields) {
+     if(error) throw error;
+     
+     res.send(JSON.stringify(result));
+    });
+}); 
 
 app.listen(8080);
