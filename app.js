@@ -50,4 +50,4 @@ app.get("/", function(req, res, next) {
     console.log("HELLO, MYSQL");
 });
 
-server.listen(8080);
+app.listen(8080);
