@@ -42,7 +42,6 @@ function App() {
         	<th>Species</th>
 	</tr>
 	{pets && pets.map((pet, key) => (}
-  }
           <tr>
              <td>{pet.name}</td>
 	     <td>{pet.species}</td>
