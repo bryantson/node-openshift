@@ -49,6 +49,9 @@ app.get("/", function(req, res, next) {
 
 app.get("/pet", function(req, res, next) {
      res.locals.connection.query("SELECT * FROM pet", function(error, result, fields) {
+     // PREVENT thread pool handling:
+    res.locals.connection.release();
+      
      if(error) res.send("ERROR: " + error);
      
      res.send(JSON.stringify(result));
