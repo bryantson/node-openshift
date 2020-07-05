@@ -45,3 +45,7 @@ router.get("/", function(req, res, next) {
     res.send(JSON.stringify(result));
   });
 });
+
+var http = require("http");
+var server = http.createServer(app);
+server.listen(3000);
