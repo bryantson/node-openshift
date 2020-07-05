@@ -1,8 +1,10 @@
-import React, {useEffect}  from 'react';
+import React, {useEffect, useState}  from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [pets, setPets] = useState('');
 
   useEffect(() => {
     const fetchData = async() => {
@@ -10,6 +12,7 @@ function App() {
 	const body = await result.json();
 
 	console.log("BODY: " +  JSON.stringify(body));
+	setPets(body);
     }
     fetchData();
   });
@@ -29,7 +32,22 @@ function App() {
         >
           Learn React
         </a>
+	
       </header>
+      <div>
+        <table>
+	<tr>
+        	<th>Name</th>
+        	<th>Species</th>
+	</tr>
+	{pets.map((pet, key) => (
+          <tr>
+             <td>{pet.name}</td>
+	     <td>{pet.species}</td>
+          </tr>
+	))}
+        </table>
+      </div>
     </div>
   );
 }
