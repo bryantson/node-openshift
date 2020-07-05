@@ -48,6 +48,7 @@ app.get("/", function(req, res, next) {
     });
     */
     console.log("HELLO, MYSQL");
+    res.send("Hello, world");
 });
 
 app.listen(8080);
